@@ -1,9 +1,22 @@
 <html>
+
+<meta charset="UTF-8">
+
 	<head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Pecan Pine Homepage</title>
+	<script type="text/javascript" src="console_operation.js"></script>
+
 	</head>
-	<body>
-		Hello
-	</body>
+	<body onload="FocusOnInput()">
+<!--<script type="text/javascript">
+var l = "hi there".split('');
+for (i = 0; i < l.length; i++){
+	setTimeout(() => document.getElementById("text").innerHTML = "hello", 1000);
+}
+
+document.write("hello");
+</script> 
+-->
+<input type="text" id="text" onkeydown="execute(this)" onblur="this.focus()"/>  
 </html>

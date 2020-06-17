@@ -1,4 +1,38 @@
 
-body {
-	background-color: dark-grey; 
+:root {
+	--bg-color: rgb(50,50,50);
+	--text-color: rgb(210, 210, 210);
 }
+
+body {
+	background-color: var(--bg-color); 
+	color: var(--text-color);
+	font-family: "Hack Regular", monospace;
+	line-height: 2em;
+}
+
+@keyframes blink {
+    50% { opacity: 0.0; }
+}
+
+#rectangle{
+    width:10px;
+    height:20px;
+    background:var(--text-color);
+    animation: blink 1.5s step-start 0s infinite;
+    display:inline-block;
+    position: relative;
+    top: 2px;
+}
+
+input {
+	width: 100%;
+	background-color: transparent;
+	color: var(--text-color);
+	caret-width: 10px;
+&:focus {
+	display:inline-block;
+}
+}
+
+
