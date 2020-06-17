@@ -1,34 +1,34 @@
 
- function FocusOnInput(){ document.getElementById("text").focus(); }
- function hello(){ document.currentScript.parentElement.innerHTML = "hello hello"; }
- var i = 0;
- function execute(ele) {
+function insertAfter(newElement, oldElement){
+	return oldElement.parentNode.insertBefore(newElement, oldElement.nextSibling);
+}
+
+ var lineNumber = 0;
+ var commandList = ['hi', 'bye'];
+ function execute(input) {
+ 	"use strict";
     if(event.key === 'Enter') {
-    	i += 1;
-        var newText = document.createElement("input");
-        newText.setAttribute("type", "text");
-        newText.setAttribute("id", "text" + i);
-        newText.setAttribute("onkeydown", "execute(this)");
-        if (i == 1){
-        	var oldText = document.getElementById("text");
+    	var command = input.value.split(' ')[0];
+        var inputLine = document.createElement("input");
+        inputLine.setAttribute("type", "text");
+        inputLine.setAttribute("id", "text" + (lineNumber + 1));
+        inputLine.setAttribute("onkeydown", "execute(this)");
+        if ( command == '' ) {
+        	insertAfter(inputLine, input);
         }
         else {
-        	var id = "text" + (i-1).toString();
-        	var oldText = document.getElementById(id);
-        	//console.log(oldText);
-        	//console.log(id);
-        }
-        var command = oldText.value;
-        if ( command != '' ) {
         	var output = document.createElement("div");
-        	output.innerHTML = "command not found: " + command;
-        	oldText.parentNode.insertBefore(output, oldText.nextSibling);
-        	output.parentNode.insertBefore(newText, output.nextSibling);
+        	if (commandList.includes(command)){
+        		output.innerHTML = "executing " + command + "...";
+        	}
+        	else {
+        		output.innerHTML = "command not found: " + command;
+        	}
+        	insertAfter(output, input);
+        	insertAfter(inputLine, output);
         }
-        else {
-        //document.body.insertBefore(newText, oldText);
-        oldText.parentNode.insertBefore(newText, oldText.nextSibling);
-        }
-        newText.focus();
+        lineNumber += 1;
+        inputLine.focus();
     }
 }
+

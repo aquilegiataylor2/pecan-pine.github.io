@@ -26,6 +26,7 @@ body {
 }
 
 input {
+	border: 0;
 	width: 100%;
 	background-color: transparent;
 	color: var(--text-color);
