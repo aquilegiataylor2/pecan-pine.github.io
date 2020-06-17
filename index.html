@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Pecan Pine Homepage</title>
 	<script type="text/javascript" src="console_operation.js"></script>
+	<script type="text/javascript" src="console_commands.js"></script>
 	<script>
 	function FocusOnInput(){ document.getElementById("text").focus(); }
 	</script>
@@ -20,5 +21,9 @@ for (i = 0; i < l.length; i++){
 document.write("hello");
 </script> 
 -->
-<input type="text" id="text" onkeydown="execute(this)" onblur="this.focus()"/>  
+<div> Welcome to the Pecan Pine homepage! </div>
+<div> Type a command, then press "Enter" to execute your command.</div>
+<div> Use the command "help" for a list of available commands. </div>
+
+<span id = "prompt0"> >>> </span> <input type="text" id="text" onkeydown="execute(this)" onblur="this.focus()" autocomplete="off"/>  
 </html>
