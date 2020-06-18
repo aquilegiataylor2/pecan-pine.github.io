@@ -1,0 +1,153 @@
+.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+
+
+
+/*Graph CSS*/
+
+.bar-graph {
+  padding: 0;
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 425px;
+  margin: 0;
+}
+
+.bar-graph li {
+  display: block;
+  padding: 1.5625rem 0;
+  position: relative;
+  text-align: center;
+  vertical-align: bottom;
+  border-radius: 4px 4px 0 0;
+  max-width: 20%;
+  height: 100%;
+  margin: 0 1.8% 0 0;
+  -webkit-flex: 1 1 15%;
+      -ms-flex: 1 1 15%;
+          flex: 1 1 15%;
+}
+
+.bar-graph .bar-graph-axis {
+  -webkit-flex: 1 1 25%;
+      -ms-flex: 1 1 25%;
+          flex: 1 1 25%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bar-graph .bar-graph-label {
+  margin: 0;
+  background-color: inherit;
+  color: #8a8a8a;
+  position: relative;
+  border-bottom: 1px dashed #8a8a8a;
+}
+
+/* basic positioning */
+.legend { list-style: none;
+          float: center; margin-left: 200px;}
+.legend li { float: left; margin-right: 10px;}
+.legend span { border: 1px solid #ccc;
+              float: left;
+              width: 12px;
+              height: 12px;
+              margin: 8px;
+              text-align: center;}
+/* your colors */
+.legend .current { background-color: #85B886; }
+.legend .offnon { background-color: #ffff80; }
+.legend .beenawhile { background-color: #990099; }
+.legend .longwhile { background-color: #1D8ECA; }
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .bar-graph-label:before, .bar-graph .bar-graph-label:after {
+    content: "";
+    position: absolute;
+
+    padding-bottom: 25px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 20%;
+  }
+}
+
+@media print, screen and (min-width: 40em) and (min-width: 64em) {
+  .bar-graph .bar-graph-label:before, .bar-graph .bar-graph-label:after {
+    width: 30%;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .bar-graph-label:after {
+    left: auto;
+    right: 0;
+  }
+}
+
+.bar-graph .percent {
+  letter-spacing: -3px;
+  opacity: 0.4;
+  width: 100%;
+  font-size: 1.875rem;
+  position: absolute;
+}
+
+@media print, screen and (min-width: 40em) {
+  .bar-graph .percent {
+    font-size: 3.875rem;
+  }
+}
+
+.bar-graph .percent span {
+  font-size: 1.875rem;
+}
+
+.bar-graph .description {
+  font-weight: 800;
+  opacity: 0.75;
+  width: 100%;
+  font-size: small;
+  bottom: 5px;
+  position: absolute;
+  font-size: 1rem;
+  overflow-wrap: normal;
+  overflow: auto;
+}
+
+.bar-graph .bar.current {
+  border: 1px solid #85B886;
+  background: linear-gradient(#85B886, #85B886 70%);
+}
+
+.bar-graph .bar.offnon {
+  border: 1px solid #ffff80;
+  background: linear-gradient(#ffff80, #ffff80 70%);
+}
+
+.bar-graph .bar.beenawhile {
+  border: 1px solid #990099;
+  background: linear-gradient(#990099, #990099 70%);
+}
+
+.bar-graph .bar.longwhile {
+  border: 1px solid #1D8ECA;
+  background: linear-gradient(#1D8ECA, #1D8ECA 70%);
+}
+
+.description{
+    color: rgb(0,0,0);
+    font-size: small;
+}
