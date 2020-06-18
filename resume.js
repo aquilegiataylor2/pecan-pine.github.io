@@ -2,7 +2,7 @@
 function resume(output){
     output.innerHTML = `
 <div>Nathan Taylor</div>
-<div>pecan.pine@gmail.com</div>
+<div>pecan dot pine at gmail dot com</div>
 <br>
 <div>Education</div>
 <br>
