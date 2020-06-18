@@ -2,8 +2,7 @@
 function resume(output){
     output.innerHTML = `
 <div>Nathan Taylor</div>
-<div>2543 Kincaid Street, Eugene, Oregon</div>
-<div>(831)247-8815</div>
+<div>pecan.pine@gmail.com</div>
 <br>
 <div>Education</div>
 <br>
