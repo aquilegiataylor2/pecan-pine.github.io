@@ -47,12 +47,20 @@
 	    var me = document.getElementById("me");
 	    var planet = document.getElementById("planet");
 	    var linkedin = document.getElementById("linkedin");
+	    var sun = document.getElementById("sun");
+	    sun.style.position="absolute";
 	    res.style.position="absolute";
 	    cat.style.position="absolute";
 	    me.style.position="absolute";
 	    planet.style.position="absolute";
 	    linkedin.style.position="absolute";
         
+        sun.style.left = "300px";
+        sun.style.top = "100px";
+        
+        for (j = 0; j < 100; j++){
+        center[0] = 300 + 100 * Math.cos(j);
+        center[1] = 200 + 100 * Math.sin(j);
         planet.style.left = center[0].toString() + "px";
         planet.style.top = center[1].toString() + "px";
 	    planetOrbit = ellipsePos(planet, center[0], center[1], 200, 200);
@@ -66,6 +74,7 @@
 	    catOrbit(i);
 	    resOrbit(i + 100 * 2 * Math.PI / 3);
 	    linOrbit(i + 100 * 4 * Math.PI / 3);
+	    }
 	    /*res.style.top = (center[0] + 150 * Math.sin(i / 100)).toString() + "px";
 	    res.style.left = (center[1] + 150 + 200 * Math.cos(i / 100)).toString() + "px";
 	    cat.style.top = (center[0] + 250 * Math.sin(-i / 95)).toString() + "px";
@@ -89,8 +98,58 @@
 <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > <img src="Octocat.png" id="octocat" height="100px"/> </a>
 <span id="me"></span>
 <!-- <img src="me.png" id="me" height="100px"/>-->
-<img src="planet2.png" id="planet" height="200px" z-index="5"/>
+<img src="planet3.png" id="planet" height="200px" z-index="5"/>
 <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" ><img src="linkedin.png" id="linkedin" height="100px"/></a>
 </div>
+
+<img src="sun.png" id="sun" height="300px"/>
+
+ <!-- Draggable DIV -->
+<div id="move" class="move" style="position:absolute;">
+<img src="me.png" height="100px"/>
+</div> 
+<script>
+// Make the DIV element draggable:
+//dragElement(document.getElementById("move"));
+//dragElement(document.getElementById("planet"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+    //alert("dragmouseDown");
+  }
+
+  function elementDrag(e) {
+    //alert("elementDrag");
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    //alert("closedragelement");
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
 </body> 
 </html>
