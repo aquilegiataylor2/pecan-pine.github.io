@@ -83,7 +83,7 @@
     }
     
     async function moveRight(){
-        while(getLeft(rectangle) < bodyWidth - 1 * getWidth(rectangle)){
+        while(getLeft(rectangle) < bodyWidth - .9 * getWidth(rectangle)){
             // compute new value
             var newValue = getLeft(rectangle) + moveAmount;
             // convert to "10px" form
