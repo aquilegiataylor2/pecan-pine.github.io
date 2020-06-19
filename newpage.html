@@ -8,10 +8,12 @@
     var bodyHeight;
     var bodyWidth;
     var rectangle;
+    var initialTop;
+    var initialLeft;
     
     // control speed of the rectangle
     var sleepTime = 1;
-    var moveAmount = 1;
+    var moveAmount = 3;
     
     // track position of rectangle
     // position = top left, bottom left, bottom right, top right
@@ -44,6 +46,9 @@
     bodyWidth = getWidth(body);
     
     rectangle = document.getElementById("rectangle");
+    initialTop = getTop(rectangle);
+    initialLeft = getLeft(rectangle);
+    
     rectangle.addEventListener("click", moveMe, false);
     }
     
@@ -60,7 +65,21 @@
             moveRight();
             position = "bottom right";
         }   
-        
+        else if (position == "bottom right"){
+            moveUp();
+            position = "top right";
+        }
+        else if (position == "top right"){
+            moveLeft();
+            position = "complete";
+        }  
+    }
+    
+    async function checkComplete(){
+        while (position != "complete"){
+            await sleep(sleepTime);
+        }
+        alert("you win!");
     }
     
     async function moveRight(){
@@ -82,26 +101,31 @@
             await sleep(sleepTime);
         }
     }
-    
-    async function keepFalling(){
-        const e = document.getElementById("rectangle");
-        while(getTop(e) < bodyHeight - 1.5 * getHeight(e)){
-            fall();
+    async function moveLeft(){
+        while(getLeft(rectangle) > initialLeft){
+            // compute new value
+            var newValue = getLeft(rectangle) - moveAmount;
+            // convert to "10px" form
+            rectangle.style.left = newValue.toString() + "px";
+            await sleep(sleepTime);
+        }
+        if (position == "complete"){
+            alert("you win!");
+        }
+    }
+    async function moveUp(){
+        while(getTop(rectangle) > initialTop){
+            // compute new value
+            var newValue = getTop(rectangle) - moveAmount;
+            // convert to "10px" form
+            rectangle.style.top = newValue.toString() + "px";
             await sleep(sleepTime);
         }
     }
-    
-    function fall(){
-        const e = document.getElementById("rectangle");
-        //alert((getTopPercent(e)).toString() + "%");
-        e.style.top = (getTop(e) + 1).toString() + "px";
-    }
-    
-    
-    
+      
     function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
 	</script>
 	<link rel="stylesheet" type="text/css" href="newpage.css">
