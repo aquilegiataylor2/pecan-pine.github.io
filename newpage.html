@@ -4,103 +4,97 @@
 
 	<head>
     <script>
-           var body;
-    var bodyStyle;
-    var bodyHeightString;
-    var bodyWidthString;
-    var  bodyHeight;
+    // global varibles which will be initialized after page load
+    var bodyHeight;
     var bodyWidth;
     var rectangle;
-    // position = [top left, bottom left, bottom right, top right]
+    
+    // control speed of the rectangle
+    var sleepTime = 1;
+    var moveAmount = 1;
+    
+    // track position of rectangle
+    // position = top left, bottom left, bottom right, top right
     var position = "top left";
-    function style(e, prop){
-        return window.getComputedStyle(e).getPropertyValue(prop);
+    
+    // functions to compute current postion of an element
+    function getFloat(e, property){
+        let style = window.getComputedStyle(e);
+        let value = style.getPropertyValue(property);
+        return parseFloat(value.slice(0,-2));
     }
     function getTop(e){
-        return style(e, "top");
+        return getFloat(e, "top");
     }
     function getHeight(e){
-        return style(e, "height");
+        return getFloat(e, "height");
     }
-    function getTopFloat(e){
-        return parseFloat(getTop(e).slice(0,-2));
+    function getWidth(e){
+        return getFloat(e, "width");
     }
-    function getHeightFloat(e){
-        return parseFloat(getHeight(e).slice(0,-2));
+    function getLeft(e){
+        return getFloat(e, "left");
     }
-    function getWidthFloat(e){
-        return parseFloat(window.getComputedStyle(e).getPropertyValue("width").slice(0,-2));
-    }
-    function getLeftFloat(e){
-        return parseFloat(window.getComputedStyle(e).getPropertyValue("left").slice(0,-2));
-    }
-    function getTopPercent(e){
-        let body = document.getElementById("body");
-        let bodyStyle = window.getComputedStyle(body);
-        let pageHeightString = bodyStyle.getPropertyValue("height");
-        let pageHeight = parseFloat(pageHeightString.slice(0,-2));
-        
-        let eStyle = window.getComputedStyle(e);
-        let eTopString = eStyle.getPropertyValue("top");
-        let eTop = parseFloat(eTopString.slice(0,-2));
-        return (100 * eTop / pageHeight).toFixed(2);
-    }
-    function getLeftPercent(e){
-        let body = document.getElementById("body");
-        let bodyStyle = window.getComputedStyle(body);
-        let pageWidthString = bodyStyle.getPropertyValue("width");
-        let pageWidth = parseFloat(pageWidthString.slice(0,-2));
-        
-        let eStyle = window.getComputedStyle(e);
-        let eLeftString = eStyle.getPropertyValue("left");
-        let eLeft = parseFloat(eLeftString.slice(0,-2));
-        return (100 * eLeft / pageWidth).toFixed(2);
-    }
+    
+    
     function onload(){
-            body = document.getElementById("body");
-    bodyStyle = window.getComputedStyle(body);
-    bodyHeightString = bodyStyle.getPropertyValue("height");
-    bodyWidthString = bodyStyle.getPropertyValue("width");
-    bodyHeight = parseFloat(bodyHeightString.slice(0,-2)).toFixed(2);
-    bodyWidth = parseFloat(bodyWidthString.slice(0,-2)).toFixed(2);
+    // compute body height and width to tell the rectangle when to stop
+    const body = document.getElementById("body");
+    bodyHeight = getHeight(body);
+    bodyWidth = getWidth(body);
     
     rectangle = document.getElementById("rectangle");
     rectangle.addEventListener("click", moveMe, false);
-    
     }
     
+    // this function gets called when the rectangle is clicked
+    // the rectangle moves differently depending on where it is at 
+    // the moment
     function moveMe(){
-        alert(position);
+        //alert(position);
         if (position == "top left"){
-            keepFalling();
+            moveDown();
             position = "bottom left";
         }
         else if (position == "bottom left"){
-            slideRight();
+            moveRight();
             position = "bottom right";
         }   
         
     }
     
-    async function slideRight(){
-        while(getLeftFloat(rectangle) < bodyWidth - 1 * getWidthFloat(rectangle)){
-            rectangle.style.left = (getLeftFloat(rectangle) + 1).toString() + "px";
-            await sleep(5);
+    async function moveRight(){
+        while(getLeft(rectangle) < bodyWidth - 1 * getWidth(rectangle)){
+            // compute new value
+            var newValue = getLeft(rectangle) + moveAmount;
+            // convert to "10px" form
+            rectangle.style.left = newValue.toString() + "px";
+            await sleep(sleepTime);
+        }
+    }
+    
+    async function moveDown(){
+        while(getTop(rectangle) < bodyHeight - 1.5 * getHeight(rectangle)){
+            // compute new value
+            var newValue = getTop(rectangle) + moveAmount;
+            // convert to "10px" form
+            rectangle.style.top = newValue.toString() + "px";
+            await sleep(sleepTime);
         }
     }
     
     async function keepFalling(){
         const e = document.getElementById("rectangle");
-        while(getTopFloat(e) < bodyHeight - 1.5 * getHeightFloat(e)){
+        while(getTop(e) < bodyHeight - 1.5 * getHeight(e)){
             fall();
-            await sleep(5);
+            await sleep(sleepTime);
         }
     }
     
     function fall(){
         const e = document.getElementById("rectangle");
         //alert((getTopPercent(e)).toString() + "%");
-        e.style.top = (getTopFloat(e) + 1).toString() + "px";
+        e.style.top = (getTop(e) + 1).toString() + "px";
     }
     
     
