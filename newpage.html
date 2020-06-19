@@ -38,6 +38,7 @@
 	    }
 	    return positionMe;
 	}
+
 	function uniformOrbit(element){
 	    return ellipsePos(element, center[0] + 50, center[1] + 50, 150, 50)
 	}
@@ -48,41 +49,41 @@
 	    var planet = document.getElementById("planet");
 	    var linkedin = document.getElementById("linkedin");
 	    var sun = document.getElementById("sun");
-	    sun.style.position="absolute";
+	    var planetOrbital = document.getElementById("planetOrbital");
+	    planetOrbital.position="absolute";
+	    //sun.style.position="absolute";
 	    res.style.position="absolute";
-	    cat.style.position="absolute";
+	    cat.style.position="relative";
 	    me.style.position="absolute";
 	    planet.style.position="absolute";
 	    linkedin.style.position="absolute";
         
-        sun.style.left = "300px";
-        sun.style.top = "100px";
+        //sun.style.position="fixed";
+        //sun.style.left = "300px";
+        //sun.style.top = "100px";
+        let sunStyle = window.getComputedStyle(sun);
+        let sunLeft = parseFloat(sunStyle.getPropertyValue("left").slice(0,-2));
+        let sunTop = parseFloat(sunStyle.getPropertyValue("top").slice(0,-2));
         
-        for (j = 0; j < 100; j++){
-        center[0] = 300 + 100 * Math.cos(j);
-        center[1] = 200 + 100 * Math.sin(j);
-        planet.style.left = center[0].toString() + "px";
-        planet.style.top = center[1].toString() + "px";
-	    planetOrbit = ellipsePos(planet, center[0], center[1], 200, 200);
+        planetOrbit = ellipsePos(planet, center[0], center[1], 200, 200);
+        planetOrbital = ellipsePos(planetOrbital, sunLeft - 600, sunTop - 200, 200, 70);
+        //planetOrbital = ellipsePos(planetOrbital, 50, 30, 200, 70);
 	    catOrbit = uniformOrbit(cat);
 	    resOrbit = uniformOrbit(res);
 	    meOrbit = uniformOrbit(me);
 	    linOrbit = uniformOrbit(linkedin);
 	    linkedin.style.zIndex = -10;
 	    res.style.zIndex = 10;
-	    for (i = 0; i < 10000; i++){
-	    catOrbit(i);
-	    resOrbit(i + 100 * 2 * Math.PI / 3);
-	    linOrbit(i + 100 * 4 * Math.PI / 3);
-	    }
-	    /*res.style.top = (center[0] + 150 * Math.sin(i / 100)).toString() + "px";
-	    res.style.left = (center[1] + 150 + 200 * Math.cos(i / 100)).toString() + "px";
-	    cat.style.top = (center[0] + 250 * Math.sin(-i / 95)).toString() + "px";
-	    cat.style.left = (center[1] - 100 + 250 * Math.cos(-i / 95)).toString() + "px";
-	    me.style.top = (center[0] - 100 +  300 * Math.sin( -(10 + i) / 90)).toString() + "px";
-	    me.style.left = (center[1] + 100 + 300 * Math.cos(-(10 + i) / 90)).toString() + "px";*/
-	    await sleep(20);
-	    }
+        planet.style.left = center[0].toString() + "px";
+        planet.style.top = center[1].toString() + "px";	    
+        
+        for (i = 0; i < 10000; i++){
+            planetOrbital(i);
+            catOrbit(i);
+	        resOrbit(i + 100 * 2 * Math.PI / 3);
+	        linOrbit(i + 100 * 4 * Math.PI / 3);
+            await sleep(20);
+        }
 	}
 	function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -93,7 +94,7 @@
 <body id="body" onload="onload()">
 
 <span> Welcome to the Pecan Pine homepage! </span>
-<div style="transform:scale(0.5); position: relative; top: -100px; left: 300px;>
+<div id="planetOrbital" style="transform:scale(0.5); position: relative; top: -100px; left: 300px;">
 <a href="resume.pdf" target="_blank" rel="noopener noreferrer"> <img src="resume_text.png" id="resume" height="100px"/></a>
 <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > <img src="Octocat.png" id="octocat" height="100px"/> </a>
 <span id="me"></span>
@@ -102,11 +103,11 @@
 <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" ><img src="linkedin.png" id="linkedin" height="100px"/></a>
 </div>
 
-<img src="sun.png" id="sun" height="300px"/>
+<img class="centered" src="sun.png" id="sun" height="300px"/>
 
  <!-- Draggable DIV -->
 <div id="move" class="move" style="position:absolute;">
-<img src="me.png" height="100px"/>
+<!-- <img src="me.png" height="100px"/>-->
 </div> 
 <script>
 // Make the DIV element draggable:
