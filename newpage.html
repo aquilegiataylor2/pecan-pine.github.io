@@ -23,18 +23,26 @@
 	        if (Math.abs(angle - Math.PI) < .01){
 	            element.style.zIndex = -10;
 	        }
-	        /*
-	        if ((angle % (Math.PI)) < .01){
-                let style = window.getComputedStyle(element);
-                let z_index = style.getPropertyValue("z-index");
-                if (z_index == "10"){
-                    element.style.zIndex = "0";
-                }
-                else {
-                    element.style.zIndex = "10";
-                }
-	        } 
-	        */
+	    }
+	    return positionMe;
+	}
+	
+    function ellipsePos2(element, xCenter, yCenter, xRadius, yRadius){
+	    function positionMe (angle){
+	        angle = angle / 100;
+	        //var xCoord = xCenter + xRadius * Math.cos(angle);
+	        //var yCoord = yCenter + yRadius * Math.sin(angle);
+	        var xCoord = -5 + 25 * Math.cos(angle);
+	        var yCoord = 35 + 35 * Math.sin(angle);	        
+	        element.style.left = xCoord.toString() + "%";
+	        element.style.top = yCoord.toString() + "%";
+	        angle = angle % (2 * Math.PI);
+	        if ( Math.abs(angle) < .01 ){
+	            element.style.zIndex = 10;
+	        }
+	        if (Math.abs(angle - Math.PI) < .01){
+	            element.style.zIndex = -10;
+	        }
 	    }
 	    return positionMe;
 	}
@@ -66,8 +74,8 @@
         let sunTop = parseFloat(sunStyle.getPropertyValue("top").slice(0,-2));
         
         planetOrbit = ellipsePos(planet, center[0], center[1], 200, 200);
-        planetOrbital = ellipsePos(planetOrbital, sunLeft - 600, sunTop - 200, 200, 70);
-        //planetOrbital = ellipsePos(planetOrbital, 50, 30, 200, 70);
+        //planetOrbital = ellipsePos2(planetOrbital, 0.2 * sunLeft, sunTop - 200, 220, 60);
+        planetOrbital = ellipsePos(planetOrbital, -100, 70, 200, 40);
 	    catOrbit = uniformOrbit(cat);
 	    resOrbit = uniformOrbit(res);
 	    meOrbit = uniformOrbit(me);
@@ -94,6 +102,7 @@
 <body id="body" onload="onload()">
 
 <span> Welcome to the Pecan Pine homepage! </span>
+<div id="solarSystem" class="centered">
 <div id="planetOrbital" style="transform:scale(0.5); position: relative; top: -100px; left: 300px;">
 <a href="resume.pdf" target="_blank" rel="noopener noreferrer"> <img src="resume_text.png" id="resume" height="100px"/></a>
 <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > <img src="Octocat.png" id="octocat" height="100px"/> </a>
@@ -103,8 +112,8 @@
 <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" ><img src="linkedin.png" id="linkedin" height="100px"/></a>
 </div>
 
-<img class="centered" src="sun.png" id="sun" height="300px"/>
-
+<img src="sun.png" id="sun" height="300px"/>
+<div>
  <!-- Draggable DIV -->
 <div id="move" class="move" style="position:absolute;">
 <!-- <img src="me.png" height="100px"/>-->
