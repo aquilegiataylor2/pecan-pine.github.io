@@ -8,22 +8,71 @@
 	<link rel="stylesheet" type="text/css" href="newpage.css">
 	<title>Pecan Pine Homepage</title>
 	<script>
+	var center = [300, 200];
+	function ellipsePos(element, xCenter, yCenter, xRadius, yRadius){
+	    function positionMe (angle){
+	        angle = angle / 100;
+	        var xCoord = xCenter + xRadius * Math.cos(angle);
+	        var yCoord = yCenter + yRadius * Math.sin(angle);
+	        element.style.left = xCoord.toString() + "px";
+	        element.style.top = yCoord.toString() + "px";
+	        angle = angle % (2 * Math.PI);
+	        if ( Math.abs(angle) < .01 ){
+	            element.style.zIndex = 10;
+	        }
+	        if (Math.abs(angle - Math.PI) < .01){
+	            element.style.zIndex = -10;
+	        }
+	        /*
+	        if ((angle % (Math.PI)) < .01){
+                let style = window.getComputedStyle(element);
+                let z_index = style.getPropertyValue("z-index");
+                if (z_index == "10"){
+                    element.style.zIndex = "0";
+                }
+                else {
+                    element.style.zIndex = "10";
+                }
+	        } 
+	        */
+	    }
+	    return positionMe;
+	}
+	function uniformOrbit(element){
+	    return ellipsePos(element, center[0] + 50, center[1] + 50, 150, 50)
+	}
 	async function onload(){
-	    var center = [300, 300];
 	    var res = document.getElementById("resume");
 	    var cat = document.getElementById("octocat");
 	    var me = document.getElementById("me");
+	    var planet = document.getElementById("planet");
+	    var linkedin = document.getElementById("linkedin");
 	    res.style.position="absolute";
 	    cat.style.position="absolute";
 	    me.style.position="absolute";
+	    planet.style.position="absolute";
+	    linkedin.style.position="absolute";
+        
+        planet.style.left = center[0].toString() + "px";
+        planet.style.top = center[1].toString() + "px";
+	    planetOrbit = ellipsePos(planet, center[0], center[1], 200, 200);
+	    catOrbit = uniformOrbit(cat);
+	    resOrbit = uniformOrbit(res);
+	    meOrbit = uniformOrbit(me);
+	    linOrbit = uniformOrbit(linkedin);
+	    linkedin.style.zIndex = -10;
+	    res.style.zIndex = 10;
 	    for (i = 0; i < 10000; i++){
-	    res.style.top = (center[0] + 150 * Math.sin(i / 100)).toString() + "px";
+	    catOrbit(i);
+	    resOrbit(i + 100 * 2 * Math.PI / 3);
+	    linOrbit(i + 100 * 4 * Math.PI / 3);
+	    /*res.style.top = (center[0] + 150 * Math.sin(i / 100)).toString() + "px";
 	    res.style.left = (center[1] + 150 + 200 * Math.cos(i / 100)).toString() + "px";
 	    cat.style.top = (center[0] + 250 * Math.sin(-i / 95)).toString() + "px";
 	    cat.style.left = (center[1] - 100 + 250 * Math.cos(-i / 95)).toString() + "px";
 	    me.style.top = (center[0] - 100 +  300 * Math.sin( -(10 + i) / 90)).toString() + "px";
-	    me.style.left = (center[1] + 100 + 300 * Math.cos(-(10 + i) / 90)).toString() + "px";
-	    await sleep(10);
+	    me.style.left = (center[1] + 100 + 300 * Math.cos(-(10 + i) / 90)).toString() + "px";*/
+	    await sleep(20);
 	    }
 	}
 	function sleep(ms) {
@@ -34,9 +83,14 @@
 	
 <body id="body" onload="onload()">
 
-<div> Welcome to the Pecan Pine homepage! </div>
-<img src="resume_text.png" id="resume" height="200px"/>
-<img src="Octocat.png" id="octocat" height="100px"/>
-<img src="me.png" id="me" height="100px"/>
+<span> Welcome to the Pecan Pine homepage! </span>
+<div style="transform:scale(0.5); position: relative; top: -100px; left: 300px;>
+<a href="resume.pdf" target="_blank" rel="noopener noreferrer"> <img src="resume_text.png" id="resume" height="100px"/></a>
+<a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > <img src="Octocat.png" id="octocat" height="100px"/> </a>
+<span id="me"></span>
+<!-- <img src="me.png" id="me" height="100px"/>-->
+<img src="planet2.png" id="planet" height="200px" z-index="5"/>
+<a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" ><img src="linkedin.png" id="linkedin" height="100px"/></a>
+</div>
 </body> 
 </html>
