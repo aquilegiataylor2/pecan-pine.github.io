@@ -2,8 +2,11 @@
 // resume (resume.js)
 // education (education.js)
 
-var commandList = ['hi', 'bye', 'help', 'resume', 'education', 'languages','skills', 'about', 'contact'];
+var commandList = ['hi', 'bye', 'help', 'resume', 'education', 'languages','skills', 'about', 'contact', 'puzzle'];
 
+function puzzle(){
+    window.location = "puzzle.html";
+}
 function help(output) {
 	var commands = "Here is a list of available commands: <br>";
 	for (i = 0; i < commandList.length; i++){
