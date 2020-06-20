@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+	<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bar_graph.css">
+	<link rel="stylesheet" type="text/css" href="orbit.css">
+	
+	<script type="text/javascript" src="orbit.js"></script>
+	
+	<title>Pecan Pine Homepage</title>
+	</head>
+	
+<body id="body" onload="onload()">
+
+<h1> Welcome to the Pecan Pine homepage! </h1>
+
+<!-- center the entire rotating system -->
+<div id="solarSystem" class="centered">
+
+    <!-- the planet with links rotating around it -->
+    <div id="planetOrbital">
+    
+    <!-- the planet -->
+    <img src="planet3.png" id="planet" />
+    
+    <!-- the rotating links --> 
+    <a href="resume.pdf" target="_blank" rel="noopener noreferrer"> 
+    <img src="resume_text.png" id="resume" class="rotatingLinks"/>
+    </a>
+    <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > 
+    <img src="Octocat.png" id="octocat" class="rotatingLinks"/>
+    </a>
+    <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" >
+    <img src="linkedin.png" id="linkedin" class="rotatingLinks"/>
+    </a>
+
+    <!-- end planetOrbital div-->
+    </div>
+
+<img src="sun.png" id="sun"/>
+
+<!-- end solarSystem div --> 
+</div>
+</body> 
+</html>

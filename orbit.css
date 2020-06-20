@@ -1,0 +1,36 @@
+.move{
+    cursor:move;
+}
+
+.centered {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+
+/* the planetOrbital position settings are for when the planet is stationary (instead of rotating around the sun) */
+#planetOrbital {
+    transform:scale(0.5); 
+    position: relative; 
+    top: -100px; 
+    left: 300px;
+}
+
+#planet {
+    height: 200px;
+    z-index: 5;
+}
+
+#sun {
+    height: 300px;
+    position: relative;
+    top: 60px;
+}
+
+.rotatingLinks {
+    height: 100px;
+}
+
+.rotatingLinks, #planet {
+    position: absolute;
+}
