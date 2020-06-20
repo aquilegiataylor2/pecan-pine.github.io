@@ -108,7 +108,7 @@ async function onload(){
     planet.style.top = center[1].toString() + "px";	
 
        
-    for (i = 0; i < 10000; i++){
+    for (i = 0; i < 10200; i++){
         //blueOrbit(i + 100 * 2 * Math.PI / 3, - Math.PI / 4 + i / 2000);
         blueOrbit(i + 100 * 2 * Math.PI / 3, i / 2000);
         //otherOrbit(i + 100 * 4 * Math.PI / 3);

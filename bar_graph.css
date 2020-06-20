@@ -5,6 +5,7 @@
 /*Graph CSS*/
 
 .bar-graph {
+  border: white 10px;
   padding: 0;
   width: 100%;
   display: -webkit-flex;

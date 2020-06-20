@@ -29,20 +29,28 @@ function skills(output){
     <div class="description">HTML / CSS</div>
   </li>
    <li class="bar current" style="height:30%">
-    <div class="description">JavaScript</div>
+    <div class="description">Java- Script</div>
    </li> 
+   
+   <!--
 	<li class="bar offnon" style="height: 5%;">
     <div class="description">Machine Learning</div>
   </li>
+   -->
+   
   <li class="bar offnon" style="height: 35%;">
     <div class="description">C++ / C#</div>
   </li>
+  
+  <!--
   <li class="bar longwhile" style="height: 10%;">
     <div class="description">Ruby</div>
   </li>
   <li class="bar longwhile" style="height: 10%;">
     <div class="description">Haskell</div>
   </li>
+  -->
+  
     <li class="bar longwhile" style="height: 50%;">
     <div class="description">Excel</div>
   </li>

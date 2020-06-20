@@ -1,33 +1,40 @@
 
+:root {
+    --text-color: rgb(210, 210, 210);
+}
+
 body {
     background-color: black;
+    overflow: auto;
 }
 
 #textArea {
-    /* background-color: gray; */
-    color: white;
+    /* background-color: gray; */ 
+    color: var(--text-color);
     width: 50%;
-    height: 85vh;
+    /* height: 85vh; */
+    height: 87%;
     position: fixed;
     right: 15px;
     z-index: -20;
+    overflow: auto;
 }
 
 #bottomTextArea, #verticalLine {
     /* background-color: blue; */
-    opacity: 0.5;
+    /* opacity: 0.5;*/
     height: 40vh;
     width : 47vw;
     position: fixed;
     /*bottom: 15px;*/
     bottom: -50px;
     z-index: -19;
-    color: white;
+    color: var(--text-color);
     padding-left: -100px;
 }
 
 #verticalLine {
-    height: 100vh;
+    height: 110vh;
     border-left: solid thick rgb(0,0,100);    
 }
 
@@ -42,8 +49,11 @@ ul {
 }
 
 h1 {
-    text-align: center;
+    text-align: left;
+    margin-left: 17px;
 }
+
+/* planet related css below */
 
 .centered {
   position: absolute;
