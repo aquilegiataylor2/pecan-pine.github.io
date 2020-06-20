@@ -1,17 +1,29 @@
 
+// starting point for coordinate calculation
 var center = [300, 200];
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+// ellipsePos outputs a which changes an element's position based
+// on the angle (angle) which is input. 
 function ellipsePos(element, xCenter, yCenter, xRadius, yRadius){
+
+    // the output function
     function positionMe (angle){
+    
+        // slow down the animation
         angle = angle / 100;
+        
+        // calculate coordinates, and set element position
         var xCoord = xCenter + xRadius * Math.cos(angle);
         var yCoord = yCenter + yRadius * Math.sin(angle);
         element.style.left = xCoord.toString() + "px";
         element.style.top = yCoord.toString() + "px";
+        
+        // adjust z-index depending on where the element is
+        // in its rotational arc
         angle = angle % (2 * Math.PI);
         if ( Math.abs(angle) < .01 ){
             element.style.zIndex = 10;
@@ -20,9 +32,11 @@ function ellipsePos(element, xCenter, yCenter, xRadius, yRadius){
             element.style.zIndex = -10;
         }
     }
+    
     return positionMe;
 }
 
+// orbit that looks good for the rotating links
 function uniformOrbit(element){
     return ellipsePos(element, center[0] + 50, center[1] + 50, 150, 50)
 }
@@ -36,16 +50,25 @@ async function onload(){
     var linkedin = document.getElementById("linkedin");
     var planetOrbital = document.getElementById("planetOrbital");
     
-    
+    // planetOrbital becomes a function which re-positions the entire div 
+    // planetOrbital, so that the planet and rotating links rotate
+    // around the sun
     planetOrbital = ellipsePos(planetOrbital, -120, 70, 225, 40);
+
+    // the rotating links (functions of angle)
 	catOrbit = uniformOrbit(octocat);
     resOrbit = uniformOrbit(resume);
     linOrbit = uniformOrbit(linkedin);
+    
+    // adjust the z-index of two elements, so they start out on the correct
+    // side of the planet
     linkedin.style.zIndex = -10;
     resume.style.zIndex = 10;
+    
+    // position planet at "center" coordinates, i.e. top right of screen
     planet.style.left = center[0].toString() + "px";
     planet.style.top = center[1].toString() + "px";	
-       
+
        
     for (i = 0; i < 10000; i++){
         // this line makes the planet rotate around the sun
@@ -57,6 +80,7 @@ async function onload(){
         resOrbit(i + 100 * 2 * Math.PI / 3);
         linOrbit(i + 100 * 4 * Math.PI / 3);
 
+        // sleep to give the appearance of animation
         await sleep(20);
        }
 }
