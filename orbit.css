@@ -31,3 +31,8 @@
 .rotatingLinks, #planet {
     position: absolute;
 }
+
+#bluePlanet, #otherPlanet {
+    height: 100px;
+    position: absolute;
+}

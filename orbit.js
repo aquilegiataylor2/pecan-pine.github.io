@@ -6,7 +6,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-// ellipsePos outputs a which changes an element's position based
+// ellipsePos outputs a function which changes an element's position based
 // on the angle (angle) which is input. 
 function ellipsePos(element, xCenter, yCenter, xRadius, yRadius){
 
@@ -19,6 +19,38 @@ function ellipsePos(element, xCenter, yCenter, xRadius, yRadius){
         // calculate coordinates, and set element position
         var xCoord = xCenter + xRadius * Math.cos(angle);
         var yCoord = yCenter + yRadius * Math.sin(angle);
+        element.style.left = xCoord.toString() + "px";
+        element.style.top = yCoord.toString() + "px";
+        
+        // adjust z-index depending on where the element is
+        // in its rotational arc
+        angle = angle % (2 * Math.PI);
+        if ( Math.abs(angle) < .01 ){
+            element.style.zIndex = 10;
+        }
+        if (Math.abs(angle - Math.PI) < .01){
+            element.style.zIndex = -10;
+        }
+    }
+    
+    return positionMe;
+}
+
+// ellipseSlant outputs a which changes an element's position based
+// on the angle (angle) which is input. 
+function ellipseSlant(element, xCenter, yCenter, xRadius, yRadius){
+
+    // the output function
+    function positionMe (angle, slant){
+    
+        // slow down the animation
+        angle = angle / 100;
+        
+        // calculate coordinates, and set element position
+        var xCoord = xRadius * Math.cos(angle) * Math.cos(slant) - yRadius * Math.sin(angle) * Math.sin(slant);
+        var yCoord = xRadius * Math.cos(angle) * Math.sin(slant) + yRadius * Math.sin(angle) * Math.cos(slant);
+        xCoord += xCenter;
+        yCoord += yCenter;
         element.style.left = xCoord.toString() + "px";
         element.style.top = yCoord.toString() + "px";
         
@@ -49,6 +81,11 @@ async function onload(){
     var planet = document.getElementById("planet");
     var linkedin = document.getElementById("linkedin");
     var planetOrbital = document.getElementById("planetOrbital");
+    var bluePlanet = document.getElementById("bluePlanet");
+    var otherPlanet = document.getElementById("otherPlanet");
+    
+    blueOrbit = ellipseSlant(bluePlanet, center[0] - 175, center[1] - 50, 200, 40);
+    //otherOrbit = ellipseSlant(otherPlanet, center[0] - 175, center[1] - 50, 200, 40, Math.PI / 4);
     
     // planetOrbital becomes a function which re-positions the entire div 
     // planetOrbital, so that the planet and rotating links rotate
@@ -71,6 +108,9 @@ async function onload(){
 
        
     for (i = 0; i < 10000; i++){
+        blueOrbit(i + 100 * 2 * Math.PI / 3, - Math.PI / 4 + i / 2000);
+        //otherOrbit(i + 100 * 4 * Math.PI / 3);
+    
         // this line makes the planet rotate around the sun
         // comment out for the planet to be in upper right corner
         planetOrbital(i);
