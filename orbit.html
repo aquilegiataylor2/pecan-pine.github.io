@@ -7,7 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="bar_graph.css">
 	<link rel="stylesheet" type="text/css" href="orbit.css">
 	
+    <script type="text/javascript" src="resume.js"></script>
+	<script type="text/javascript" src="education.js"></script>
+	<script type="text/javascript" src="languages.js"></script>
+	<script type="text/javascript" src="skills.js"></script>
+	<script type="text/javascript" src="about.js"></script>
+	<script type="text/javascript" src="contact.js"></script>
 	<script type="text/javascript" src="orbit.js"></script>
+	
+	<script type="text/javascript" src="orbitLinks.js"></script>
 	
 	<title>Pecan Pine Homepage</title>
 	</head>
@@ -45,6 +53,35 @@
 <img src="sun.png" id="sun"/>
 
 <!-- end solarSystem div --> 
+</div>
+
+<div id="textArea">
+
+</div>
+
+<div id="verticalLine">
+<div id="bottomTextArea">
+<ul id="textLinks">
+    <li>
+        <span id="resume" class="textLink" onclick = "resume(document.getElementById('textArea'))"> resume </span> 
+    </li>
+        <li id="education">
+        <span class="textLink" onclick = "education(document.getElementById('textArea'))"> education </span> 
+    </li>
+        <li id="languages">
+        <span class="textLink" onclick = "languages(document.getElementById('textArea'))"> languages </span> 
+    </li>
+        <li id="skills">
+        <span class="textLink" onclick = "skills(document.getElementById('textArea'))"> skills </span> 
+    </li>
+        <li id="about">
+        <span class="textLink" onclick = "about(document.getElementById('textArea'))"> about </span> 
+    </li>
+        <li id="contact">
+        <span class="textLink" onclick = "contact(document.getElementById('textArea'))"> contact </span> 
+    </li>
+</ul>
+</div>
 </div>
 </body> 
 </html>

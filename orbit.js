@@ -84,7 +84,7 @@ async function onload(){
     var bluePlanet = document.getElementById("bluePlanet");
     var otherPlanet = document.getElementById("otherPlanet");
     
-    blueOrbit = ellipseSlant(bluePlanet, center[0] - 175, center[1] - 50, 200, 40);
+    blueOrbit = ellipseSlant(bluePlanet, center[0] - 185, center[1] - 40, 190, 45);
     //otherOrbit = ellipseSlant(otherPlanet, center[0] - 175, center[1] - 50, 200, 40, Math.PI / 4);
     
     // planetOrbital becomes a function which re-positions the entire div 
@@ -101,6 +101,7 @@ async function onload(){
     // side of the planet
     linkedin.style.zIndex = -10;
     resume.style.zIndex = 10;
+    bluePlanet.style.zIndex = 10;
     
     // position planet at "center" coordinates, i.e. top right of screen
     planet.style.left = center[0].toString() + "px";
@@ -108,7 +109,8 @@ async function onload(){
 
        
     for (i = 0; i < 10000; i++){
-        blueOrbit(i + 100 * 2 * Math.PI / 3, - Math.PI / 4 + i / 2000);
+        //blueOrbit(i + 100 * 2 * Math.PI / 3, - Math.PI / 4 + i / 2000);
+        blueOrbit(i + 100 * 2 * Math.PI / 3, i / 2000);
         //otherOrbit(i + 100 * 4 * Math.PI / 3);
     
         // this line makes the planet rotate around the sun

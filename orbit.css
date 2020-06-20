@@ -1,4 +1,50 @@
 
+body {
+    background-color: black;
+}
+
+#textArea {
+    /* background-color: gray; */
+    color: white;
+    width: 50%;
+    height: 85vh;
+    position: fixed;
+    right: 15px;
+    z-index: -20;
+}
+
+#bottomTextArea, #verticalLine {
+    /* background-color: blue; */
+    opacity: 0.5;
+    height: 40vh;
+    width : 47vw;
+    position: fixed;
+    /*bottom: 15px;*/
+    bottom: -50px;
+    z-index: -19;
+    color: white;
+    padding-left: -100px;
+}
+
+#verticalLine {
+    height: 100vh;
+    border-left: solid thick rgb(0,0,100);    
+}
+
+
+ul {
+    padding-left: 10px;
+    list-style: none;
+}
+
+.textLink {
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+}
+
 .centered {
   position: absolute;
   top: 10%;
