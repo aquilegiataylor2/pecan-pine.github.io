@@ -3,7 +3,7 @@
 }
 
 .centered {
-  position: fixed;
+  position: absolute;
   top: 10%;
   left: 20%;
 }
