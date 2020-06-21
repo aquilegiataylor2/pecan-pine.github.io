@@ -3,16 +3,16 @@
 <meta charset="UTF-8">
 
 	<head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="bar_graph.css">
+	<link rel="stylesheet" type="text/css" href="shared/style.css">
+	<link rel="stylesheet" type="text/css" href="shared/bar_graph.css">
 	<link rel="stylesheet" type="text/css" href="orbit.css">
 	
-    <script type="text/javascript" src="resume.js"></script>
-	<script type="text/javascript" src="education.js"></script>
-	<script type="text/javascript" src="languages.js"></script>
-	<script type="text/javascript" src="skills.js"></script>
-	<script type="text/javascript" src="about.js"></script>
-	<script type="text/javascript" src="contact.js"></script>
+    <script type="text/javascript" src="shared/resume.js"></script>
+	<script type="text/javascript" src="shared/education.js"></script>
+	<script type="text/javascript" src="shared/languages.js"></script>
+	<script type="text/javascript" src="shared/skills.js"></script>
+	<script type="text/javascript" src="shared/about.js"></script>
+	<script type="text/javascript" src="shared/contact.js"></script>
 	<script type="text/javascript" src="orbit.js"></script>
 	
 	<script type="text/javascript" src="orbitLinks.js"></script>
@@ -28,29 +28,29 @@
 <div id="solarSystem" class="centered">
 
     <!-- the planet with links rotating around it -->
-    <div id="planetOrbital">
+    <div id="planetOrbital" style="opacity: 0;">
     
     <!-- the planet -->
-    <img src="planet3.png" id="planet" />
+    <img src="static/images/planet3.png" id="planet" />
     
     <!-- the rotating links --> 
-    <a href="resume.pdf" target="_blank" rel="noopener noreferrer"> 
-    <img src="resume_text.png" id="resume" class="rotatingLinks"/>
+    <a href="static/resume.pdf" target="_blank" rel="noopener noreferrer"> 
+    <img src="static/images/resume_text.png" id="resume" class="rotatingLinks"/>
     </a>
     <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > 
-    <img src="Octocat.png" id="octocat" class="rotatingLinks"/>
+    <img src="static/images/Octocat.png" id="octocat" class="rotatingLinks"/>
     </a>
     <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" >
-    <img src="linkedin.png" id="linkedin" class="rotatingLinks"/>
+    <img src="static/images/linkedin.png" id="linkedin" class="rotatingLinks"/>
     </a>
 
     <!-- end planetOrbital div-->
     </div>
 
-<img src="bluePlanet.png" id="bluePlanet" onclick="clearText();" />
+<img src="static/images/bluePlanet.png" id="bluePlanet" onclick="clearText();" />
 <!-- <img src="planet.png" id="otherPlanet"/>-->
 
-<img src="sun.png" id="sun"/>
+<img src="static/images/sun.png" id="sun"/>
 
 <!-- end solarSystem div --> 
 </div>
@@ -58,7 +58,7 @@
 <div id="textArea">
 </div>
 
-<img id="pictureOfMe" src="meAtUO2.JPG"/>
+<img id="pictureOfMe" src="static/images/meAtUO2.JPG"/>
 
 <div id="verticalLine">
 <div id="bottomTextArea">

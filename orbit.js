@@ -74,7 +74,6 @@ function uniformOrbit(element){
 }
 
 async function onload(){
-
     // get rotating elements
     var resume = document.getElementById("resume");
     var octocat = document.getElementById("octocat");
@@ -83,6 +82,8 @@ async function onload(){
     var planetOrbital = document.getElementById("planetOrbital");
     var bluePlanet = document.getElementById("bluePlanet");
     var otherPlanet = document.getElementById("otherPlanet");
+    
+    planetOrbital.style.opacity = 1;
     
     blueOrbit = ellipseSlant(bluePlanet, center[0] - 185, center[1] - 40, 190, 45);
     //otherOrbit = ellipseSlant(otherPlanet, center[0] - 175, center[1] - 50, 200, 40, Math.PI / 4);

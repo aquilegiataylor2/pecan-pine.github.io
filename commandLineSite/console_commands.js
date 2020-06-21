@@ -5,11 +5,11 @@
 var commandList = ['hi', 'bye', 'help', 'resume', 'education', 'languages','skills', 'about', 'contact', 'puzzle', 'orbit'];
 
 function puzzle(){
-    window.location = "puzzle.html";
+    window.location = "../puzzleSite/puzzle.html";
 }
 
 function orbit(){
-    window.location = "orbit.html";
+    window.location = "../index.html";
 }
 
 function help(output) {
