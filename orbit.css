@@ -9,15 +9,26 @@ body {
 }
 
 #textArea {
-    /* background-color: gray; */ 
+    /* background-color: black; */
+    opacity: 0.8;
     color: var(--text-color);
     width: 50%;
     /* height: 85vh; */
     height: 87%;
     position: fixed;
-    right: 15px;
+    right: 0px;
     z-index: -20;
     overflow: auto;
+}
+
+#pictureOfMe {
+    width: 20%;
+    position: fixed;
+    right: 10px;
+    z-index: -50;
+    border-radius: 1000px;
+        border-color: grey;
+    border-style: solid;
 }
 
 #bottomTextArea, #verticalLine {

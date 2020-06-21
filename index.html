@@ -5,26 +5,100 @@
 	<head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="bar_graph.css">
-	<title>Pecan Pine Homepage</title>
-	<script type="text/javascript" src="console_operation.js"></script>
-	<script type="text/javascript" src="console_commands.js"></script>
-	<script type="text/javascript" src="resume.js"></script>
+	<link rel="stylesheet" type="text/css" href="orbit.css">
+	
+    <script type="text/javascript" src="resume.js"></script>
 	<script type="text/javascript" src="education.js"></script>
 	<script type="text/javascript" src="languages.js"></script>
 	<script type="text/javascript" src="skills.js"></script>
 	<script type="text/javascript" src="about.js"></script>
 	<script type="text/javascript" src="contact.js"></script>
-	<script>
-	function FocusOnInput(){ document.getElementById("text").focus(); }
-	</script>
+	<script type="text/javascript" src="orbit.js"></script>
+	
+	<script type="text/javascript" src="orbitLinks.js"></script>
+	
+	<title>Pecan Pine Homepage</title>
 	</head>
 	
-<body id="body" onload="FocusOnInput()">
+<body id="body" onload="onload()">
 
-<div> Welcome to the Pecan Pine homepage! </div>
-<div> Type a command, then press "Enter" to execute your command.</div>
-<div> Use the command "help" for a list of available commands. </div>
+<h1> Welcome to the Pecan Pine homepage! </h1>
 
-<span id = "prompt0"> >>> </span> <input type="text" id="text" onkeydown="execute(this)" onblur="this.focus()" autocomplete="off"/> 
+<!-- center the entire rotating system -->
+<div id="solarSystem" class="centered">
+
+    <!-- the planet with links rotating around it -->
+    <div id="planetOrbital">
+    
+    <!-- the planet -->
+    <img src="planet3.png" id="planet" />
+    
+    <!-- the rotating links --> 
+    <a href="resume.pdf" target="_blank" rel="noopener noreferrer"> 
+    <img src="resume_text.png" id="resume" class="rotatingLinks"/>
+    </a>
+    <a href="https://github.com/pecan-pine" target="_blank" rel="noopener noreferrer" > 
+    <img src="Octocat.png" id="octocat" class="rotatingLinks"/>
+    </a>
+    <a href="https://www.linkedin.com/in/nathan-taylor-74312a184" target="_blank" rel="noopener noreferrer" >
+    <img src="linkedin.png" id="linkedin" class="rotatingLinks"/>
+    </a>
+
+    <!-- end planetOrbital div-->
+    </div>
+
+<img src="bluePlanet.png" id="bluePlanet" onclick="clearText();" />
+<!-- <img src="planet.png" id="otherPlanet"/>-->
+
+<img src="sun.png" id="sun"/>
+
+<!-- end solarSystem div --> 
+</div>
+
+<div id="textArea">
+</div>
+
+<img id="pictureOfMe" src="meAtUO.JPG"/>
+
+<div id="verticalLine">
+<div id="bottomTextArea">
+
+<script>
+function writeText(topic) {
+    var textArea = document.getElementById("textArea");
+    topic(textArea);
+    textArea.style.backgroundColor = "black";
+}
+function clearText() {
+    var textArea = document.getElementById("textArea");
+    textArea.style.backgroundColor = "transparent";
+    textArea.innerHTML = "";
+}
+</script> 
+<ul id="textLinks">
+    <li>
+        <span id="resume" class="textLink" onclick = "writeText(resume);"> resume </span> 
+    </li>
+        <li id="education">
+        <span class="textLink" onclick = "writeText(education);"> education </span> 
+    </li>
+        <li id="languages">
+        <span class="textLink" onclick = "writeText(languages);"> languages </span> 
+    </li>
+        <li id="skills">
+        <span class="textLink" onclick = "writeText(skills);"> skills </span> 
+    </li>
+        <li id="about">
+        <span class="textLink" onclick = "writeText(about);"> about </span> 
+    </li>
+        <li id="contact">
+        <span class="textLink" onclick = "writeText(contact);"> contact </span> 
+    </li>
+    <!--    <li id="clear">
+        <span class="textLink" onclick = "clearText();"> clear </span>
+    </li>-->
+</ul>
+</div>
+</div>
 </body> 
 </html>

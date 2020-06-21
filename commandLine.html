@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+
+	<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bar_graph.css">
+	<title>Pecan Pine Homepage</title>
+	<script type="text/javascript" src="console_operation.js"></script>
+	<script type="text/javascript" src="console_commands.js"></script>
+	<script type="text/javascript" src="resume.js"></script>
+	<script type="text/javascript" src="education.js"></script>
+	<script type="text/javascript" src="languages.js"></script>
+	<script type="text/javascript" src="skills.js"></script>
+	<script type="text/javascript" src="about.js"></script>
+	<script type="text/javascript" src="contact.js"></script>
+	<script>
+	function FocusOnInput(){ document.getElementById("text").focus(); }
+	</script>
+	</head>
+	
+<body id="body" onload="FocusOnInput()">
+
+<div> Welcome to the Pecan Pine homepage! </div>
+<div> Type a command, then press "Enter" to execute your command.</div>
+<div> Use the command "help" for a list of available commands. </div>
+
+<span id = "prompt0"> >>> </span> <input type="text" id="text" onkeydown="execute(this)" onblur="this.focus()" autocomplete="off"/> 
+</body> 
+</html>
