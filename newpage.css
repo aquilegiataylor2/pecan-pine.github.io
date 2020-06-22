@@ -1,0 +1,42 @@
+
+.backgroundDisplay {
+    width: 100%;
+}
+
+.hideVideoBorder {
+    background-color: black;
+}
+
+.hideVideoBorderHorizontal {
+    position: relative;
+    border-style: solid;
+    border-color: black;
+    border-width: 10px;
+}
+
+.hideVideoBorderVertical {
+    position: fixed;
+    top: 0;
+    width: 21%;
+    height: 100%;
+}
+
+#hideVideoBorderTop {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1%;
+}
+
+#hideVideoBorderBottom {
+    top: -10px;
+    height: 100%;
+}
+
+#hideVideoBorderLeft {
+    left: 0;
+}
+
+#hideVideoBorderRight {
+    right: 0;
+}
