@@ -1,16 +1,105 @@
 
-.backgroundDisplay {
+
+:root {
+    --border-thickness: 50px;
+    --div-color: white;
+    --border-color: white;
+}
+
+#title {
+    /* text-align: left;
+    margin-left: 10%; */
+    color: black;
+    opacity: 1;
+    font-family: "Playfair Display", Georgia, Serif;
+    letter-spacing: 5px;
+    position: relative;
+    top: -10px;
+    
+    text-align: center;
+    left: -20%;
+    
+}
+
+.borderDiv {
+    background-color: var(--border-color);
+    opacity: 1;
+    position: absolute;
+    z-index: 10;
+}
+
+.navButton {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(180deg);
+    display: inline-block;
+    border-style: none;
+    border-color: black;
+    border-width: 5px;
+    padding: 10px;
+    display: table-cell;
+    text-align: center;
+}
+
+.navButton:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.borderDivHorizontal {
+    width: 100%;
+    height: var(--border-thickness);
+}
+
+.borderDivVertical {
+    height: 90%;
+    width: var(--border-thickness);
+    top: 0;
+    writing-mode: vertical-rl;
+    text-orientation: sideways-right;
+}
+
+#borderDivTop {
+    top: 0;
+    left: 0;
+}
+
+#borderDivBottom {
+    bottom: 0;
+    left: 0;
+}
+
+#borderDivLeft {
+    left: 0;
+    top: var(--border-thickness);
+    table-layout: fixed;
+}
+
+#borderDivRight {
+    top: var(--border-thickness);
+    right: 0;
+}
+
+#videoContainer {
+    position: relative;
+    top: 100px;
+    left: 20%;
+    width: 60%;
+    transform: scale(1.5);
+}
+
+#video {
     width: 100%;
 }
 
 .hideVideoBorder {
-    background-color: black;
+    background-color: var(--div-color);
 }
 
 .hideVideoBorderHorizontal {
     position: relative;
     border-style: solid;
-    border-color: black;
+    border-color: var(--div-color);
     border-width: 10px;
 }
 
