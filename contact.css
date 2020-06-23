@@ -1,0 +1,29 @@
+:root {
+    --border-thickness: 50px;
+    --div-color: white;
+    --border-color: white;
+    --site-bg-color: white;
+}
+
+
+#textArea {
+    height: 100%;
+    left: 10px;
+    width: 50%;
+    padding: 30px;
+    position: absolute;
+    z-index: 200;
+}
+
+#textArea div {
+    line-height: 200%;
+}
+
+a:hover {
+    cursor: pointer;
+    background-color: rgb(240, 240, 240);
+}
+
+a{
+    margin-bottom: 12px;
+}

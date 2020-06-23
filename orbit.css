@@ -8,6 +8,7 @@ body {
     overflow: auto;
 }
 
+
 #textArea {
     /* background-color: black; */
     opacity: 0.8;
@@ -93,6 +94,10 @@ h1 {
 
 .rotatingLinks {
     height: 100px;
+}
+
+.rotatingLinks:hover {
+    cursor: pointer;
 }
 
 .rotatingLinks, #planet {

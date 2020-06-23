@@ -1,8 +1,6 @@
 
 function resume(output){
     output.innerHTML = `
-<div> (Click on the orbiting link for my resume as a PDF)</div>
-<br>
 <div>Nathan Taylor</div>
 <div>pecan.pine@gmail.com</div>
 <br>
