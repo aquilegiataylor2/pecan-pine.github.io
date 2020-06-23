@@ -4,12 +4,89 @@
     --border-thickness: 50px;
     --div-color: white;
     --border-color: white;
+    --site-bg-color: white;
 }
+
+/* CSS for sites page: */
+#siteGrid{
+    background-color: var(--site-bg-color);
+    position: absolute;
+    top: var(--border-thickness);
+    left: var(--border-thickness);
+    width: 100%;
+    height: 100%;
+    padding: 60px;
+    z-index: 10;
+}
+
+#gridDescription {
+    position: absolute;
+    top: var(--border-thickness);
+    left: var(--border-thickness);
+    z-index: 20;
+    padding: 30px;
+    font-size: large;
+}
+
+#oldSites {
+    position: absolute;
+    bottom: calc( var(--border-thickness) / 3) ;
+    left: calc( var(--border-thickness) / 2) ;
+    z-index: 20;
+    padding: 30px;
+    font-size: large;
+}
+
+#titleLink:hover {
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+
+.site {
+    height: auto;
+    width: 25%;
+    margin: 30px;
+    float: left;
+    border-radius: 5px;
+}
+
+.site:hover {
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
+
+.siteDescription {
+    clear: both;
+    position: relative;
+    left: 2%;
+    width: 25%;
+    background-color: red;
+}
+
+.siteWrapper {
+    background-color: black;
+    height: auto;
+}
+/* End CSS for sites page */
 
 body {
     /* background-color: green; */
     height: 100vh;
     overflow: hidden;
+}
+
+a:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
 }
 
 #title {
