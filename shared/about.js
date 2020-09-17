@@ -10,7 +10,5 @@ function about(output){
     I'm looking for a position somewhere in Oregon, ideally in the Corvallis / Salem area. I'm more than happy to talk about opportunities or general networking. Thanks!
     </div>
     <br>
-    <div>About the name Pecan Pine:</div>
-    <div>The name pecan pine comes from "pecan pie"--the Southern dessert, together with pine, i.e. pine tree. The name juxtaposes my Southern heritage (my extended family is from the South) with where I grew up (in the foothills of California, where there are lots of pine trees).</div>
     `;
 }
