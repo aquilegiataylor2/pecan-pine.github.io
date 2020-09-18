@@ -74,12 +74,12 @@ Social Security Administration's baby names database.</li>
         <div>Work Experience</div>
         <br>
 
-        <div>Tutor.com August 2020 - Present Tutor</div>
+        <div>Tutor.com--August 2020 - Present--Tutor</div>
         <div>Tutored high school and college students in Calculus and Python.</div>
         <br>
         <br>
 
-        <div>University of Oregon September 2017-August 2019 Graduate Employee</div>
+        <div>University of Oregon--September 2017-August 2019--Graduate Employee</div>
         <div>Taught undergraduate Mathematics courses as the primary instructor. Planned the
 structure of the course, determined the order in which content was covered,
 wrote exams, and graded exams. Led a small team of graduate-students in a study
