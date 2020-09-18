@@ -1,77 +1,93 @@
 
 function resume(output){
     output.innerHTML = `
-<div>Nathan Taylor</div>
-<div>pecan.pine@gmail.com</div>
-<br>
-<div>Education</div>
-<br>
-<div>University of Oregon--Eugene, Oregon September 2017 - June 2019</div>
-<div>M.S. Mathematics</div>
-<div>University of Montana--Missoula, Montana August 2014-May 2017</div>
-<div>M.A. Mathematics</div>
-<div>University of California--Santa Cruz, California September 2007-March 2011</div>
-<div>B.A. Mathematics</div>
-<br>
-<div>Skills:</div>
-<br>
-<div>Python</div>
-<div>Skilled at Python programming, and solving problems using Python.</div>
-<br>
-<div>--Contributed to the sympy project (a computer algebra system written in Python) by writing a test for one of their differential equation solvers.</div>
-<div>--I made a Flask app that helps organize photos into different categories using a SQLite database. I'm working on incorporating machine learning into the app so that photos can be categorized automatically.</div>
-<br>
-<div>Bash</div>
-<div>Proficient in Bash scripting. Here are some examples of Bash scripts I have recently written:</div>
-<br>
-<div>--A script which backs up the home directory, gives the copied directory a name including the current time, then deletes the oldest previously backed up directory.</div>
-<div>--A program which compares files with the same name in two different directories, and lets the user update one of the copies if desired.</div>
-<div>--Scripts to speed up installing Arch linux. The scripts walk the user through the installation process, asking questions when it needs input. Each line in the script output is a different color.</div>
-<div>--A program which displays a simple menu to help transfer themes from one Linux distribution to another.</div>
-<br>
-<div>SQL</div>
-<div>--Familiar with the SQL database language:</div>
-<br>
-<div>--Used SQLite to store and query user data in Flask applications. Used MySQL and Python to query and graph data from the Social Security Administration's baby names database.</div>
-<br>
-<div>C++ / Arduino / Raspberry Pi</div>
-<div>--Designed and programmed an Arduino circuit to regulate air/fuel ratio in a 1985 Nissan Pickup.</div>
-<div>--The Arduino circuit replaced the old computer, increasing highway fuel economy from 12 mpg (with no functioning computer) to 22 mpg.</div>
-<div>--I set up a Raspberry Pi as a web server on my local network.</div>
-<br>
-<div>Other</div>
-<div>--Other tools I'm familiar with: Git, LaTeX, Linux (installing and configuring), Flask web framework, HTML, CSS, JavaScript, and the C++ language.</div>
-<br>
-<div>Relevant Courses</div>
-<div>Harvard University/edX--Online Completed April, 2020</div>
-<div>--CS50: Introduction to Computer Science</div>
-<br>
-<div>Coursera--Online Courses Completed April/June, 2020</div>
-<div>--Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning</div>
-<div>--Databases and SQL for Data Science</div>
-<div>--Python for Data Science and AI</div>
-<div>--Data Science Methodology</div>
-<div>--What is Data Science?</div>
-<br>
-<div>HackerRank Skill Certificates Completed May, 2020</div>
-<div>--Problem Solving (Basic)</div>
-<div>--Problem Solving (Intermediate)</div>
-<div>--Python (Basic)</div>
-<br>
-<div>Lane Community College Completed August 2019</div>
-<div>--Introduction to Computer Networks (CS 179)</div>
-<br>
-<div>Relevant Recent Work Experience</div>
-<div>University of Oregon September 2017-August 2019 Graduate Employee</div>
-<br>
-<div>Courses Taught:</div>
-<div>Math 111 (College Algebra): Fall 2017, Winter 2018.</div>
-<div>Math 112 (Trigonometry): Spring 2018, Fall 2018.</div>
-<div>Math 107 (University Math 3): Summer 2018.</div>
-<div>Math 241 (Business Calculus): Spring 2019.</div>
-<div>Math 106 (University Math 2): Summer 2019.</div>
-<br>
-<div>Courses as a Teaching Assistant:</div>
-<div>Math 241 (Business Calculus): Winter 2019.</div>
-<br>`;
+        <br>
+        <div>Nathan Taylor</div>
+        <br>
+        <div>pecan.pine@gmail.com</div>
+        <div>pecan-pine.github.io</div>
+        <br>
+        <br>
+
+        <div>Education</div>
+        <br>
+
+        <div>Oregon State University--Corvallis, Oregon / Online--Fall 2020 - Spring 2022</div>
+            <div>B.S. Computer Science (in progress)</div>
+        <br>
+        <br>
+
+        <div>University of Oregon--Eugene, Oregon--Fall 2017 - Spring 2019</div>
+            <div>M.S. Mathematics</div>
+        <br>
+        <br>
+
+
+        <div>Skills</div>
+        <br>
+
+        <div>JavaScript</div>
+        <div>I designed and built several JavaScript-based websites (linked on my homepage).
+My favorite to build was a command-line themed page where you type in commands
+to navigate the site.</div>
+        <br>
+        <br>
+
+        <div>Python</div>
+        <div>Skilled at Python programming, and solving problems using Python:</div>
+            <ul>
+                <li>Contributed to the SymPy project (a computer algebra system written in Python)
+by developing a test for one of their differential equation solvers. The test
+ensured that a certain error was resolved.</li>
+                <li>I made a Flask app that organizes photos into different categories and stores
+that data in a SQLite database.</li>
+            </ul>
+        <br>
+        <br>
+
+        <div>Shell</div>
+        <div>Proficient in shell scripting. Here are some examples of Bash scripts I have
+recently written:</div>
+            <ul>
+                <li>A script which backs up the home directory, gives the copied directory a name
+including the current time, then deletes the oldest previously backed up
+directory.</li>
+                <li>A program which compares files with the same name in two different directories,
+and lets the user update one of the copies if desired.</li>
+            </ul>
+        <br>
+        <br>
+
+        <div>SQL</div>
+        <div>Familiar with the SQL database language:</div>
+            <ul>
+                <li>Created SQLite databases to store and query user data in Flask applications.</li>
+                <li>Developed functions utilizing MySQL and Python to query and graph data from the
+Social Security Administration's baby names database.</li>
+            </ul>
+        <br>
+        <br>
+
+
+
+
+        <div>Work Experience</div>
+        <br>
+
+        <div>Tutor.com August 2020 - Present Tutor</div>
+        <div>Tutored high school and college students in Calculus and Python.</div>
+        <br>
+        <br>
+
+        <div>University of Oregon September 2017-August 2019 Graduate Employee</div>
+        <div>Taught undergraduate Mathematics courses as the primary instructor. Planned the
+structure of the course, determined the order in which content was covered,
+wrote exams, and graded exams. Led a small team of graduate-students in a study
+group that produced 50 pages of solutions to abstract algebra problems.</div>
+        <br>
+        <br>
+
+
+
+    `;
 }
