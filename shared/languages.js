@@ -3,7 +3,6 @@ function languages(output){
         <div>Highly Proficient:</div>
         <ul>
             <li>Python</li>
-            <li>SQL</li>
         </ul>
         <br>
 
