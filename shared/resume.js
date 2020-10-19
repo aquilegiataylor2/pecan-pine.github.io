@@ -36,14 +36,16 @@ then updates my website with the new resume changes.</div>
         <br>
         <br>
 
-        <div>JavaScript</div>
+        <div>React Tic-Tac-Toe Improved</div>
         <div>I extended a React tic-tac-toe app by adding an opponent, the ability to resize
-the board, and the option to play on a torus.</div>
+the board, and the option to play on a torus. You can play the game on my
+GitHub page.</div>
         <br>
         <br>
 
         <div>GitHub Issue Browser</div>
-        <div>Created a Flask implementation of a simple GitHub issue browser.</div>
+        <div>Created a Flask implementation of a simple GitHub issue browser. The app is
+currently deployed on an AWS EC2 instance running Gunicorn and NGINX.</div>
         <br>
         <br>
 
