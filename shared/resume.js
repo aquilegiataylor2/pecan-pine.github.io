@@ -28,24 +28,22 @@ function resume(output){
 
         <div>Continuous Resume</div>
         <div>Designed a continuous delivery system for my resume. Resume data is stored in a
-MongoDB database. A python program inserts selected resume data into several
-Jinja templates, which are then processed into a LaTeX resume, HTML resume,
+MongoDB database. A python program then inserts selected resume data into
+several Jinja templates, which are processed into a LaTeX resume, HTML resume,
 Markdown resume, and plaintext resume. When I push changes in my resume to
-GitHub, a webhook sends a POST request to a server I set up. The server then
-updates my website with the new resume changes.</div>
+GitHub, a webhook sends a POST request to a server I configured. The server
+then updates my website with the new resume changes.</div>
         <br>
         <br>
 
         <div>JavaScript</div>
         <div>I extended a React tic-tac-toe app by adding an opponent, the ability to resize
-the board, and the option to play on a torus. I've designed and built several
-JavaScript-based websites:</div>
-            <ul>
-                <li>A space themed page with a planet orbiting a sun.</li>
-                <li>A command-line themed page where you type in commands to navigate the site.</li>
-                <li>A main page (pecan-pine.github.io) which has the same information as the above
-sites, with links to each of them.</li>
-            </ul>
+the board, and the option to play on a torus.</div>
+        <br>
+        <br>
+
+        <div>GitHub Issue Browser</div>
+        <div>Created a Flask implementation of a simple GitHub issue browser.</div>
         <br>
         <br>
 
