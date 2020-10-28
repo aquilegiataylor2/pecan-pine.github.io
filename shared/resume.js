@@ -23,48 +23,29 @@ function resume(output){
         <br>
 
 
-        <div>Skills</div>
+        <div>Projects</div>
         <br>
 
-        <div>JavaScript</div>
-        <div>I designed and built several JavaScript-based websites (linked on my homepage).
-My favorite to build was a command-line themed page where you type in commands
-to navigate the site.</div>
-        <br>
-        <br>
-
-        <div>Python</div>
-        <div>Skilled at Python programming, and solving problems using Python:</div>
-            <ul>
-                <li>Contributed to the SymPy project (a computer algebra system written in Python)
-by developing a test for one of their differential equation solvers. The test
-ensured that a certain error was resolved.</li>
-                <li>I made a Flask app that organizes photos into different categories and stores
-that data in a SQLite database.</li>
-            </ul>
+        <div>Continuous Resume</div>
+        <div>Designed a continuous delivery system for my resume. Resume data is stored in a
+MongoDB database. A python program then inserts selected resume data into
+several Jinja templates, which are processed into a LaTeX resume, HTML resume,
+Markdown resume, and plaintext resume. When I push changes in my resume to
+GitHub, a webhook sends a POST request to a server I configured. The server
+then updates my website with the new resume changes.</div>
         <br>
         <br>
 
-        <div>Shell</div>
-        <div>Proficient in shell scripting. Here are some examples of Bash scripts I have
-recently written:</div>
-            <ul>
-                <li>A script which backs up the home directory, gives the copied directory a name
-including the current time, then deletes the oldest previously backed up
-directory.</li>
-                <li>A program which compares files with the same name in two different directories,
-and lets the user update one of the copies if desired.</li>
-            </ul>
+        <div>React Tic-Tac-Toe Improved</div>
+        <div>I extended a React tic-tac-toe app by adding an opponent, the ability to resize
+the board, and the option to play on a torus. You can play the game on my
+GitHub page.</div>
         <br>
         <br>
 
-        <div>SQL</div>
-        <div>Familiar with the SQL database language:</div>
-            <ul>
-                <li>Created SQLite databases to store and query user data in Flask applications.</li>
-                <li>Developed functions utilizing MySQL and Python to query and graph data from the
-Social Security Administration's baby names database.</li>
-            </ul>
+        <div>GitHub Issue Browser</div>
+        <div>Created a Flask implementation of a simple GitHub issue browser. The app is
+currently deployed on an AWS EC2 instance running Gunicorn and NGINX.</div>
         <br>
         <br>
 
@@ -75,7 +56,8 @@ Social Security Administration's baby names database.</li>
         <br>
 
         <div>Tutor.com--August 2020 - Present--Tutor</div>
-        <div>Tutored high school and college students in Calculus and Python.</div>
+        <div>Tutored high school and college students in Calculus and Python programming.
+Teaching others to code has been a rewarding experience!</div>
         <br>
         <br>
 
