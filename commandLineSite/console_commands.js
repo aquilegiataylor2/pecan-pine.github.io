@@ -9,7 +9,7 @@ function puzzle(){
 }
 
 function orbit(){
-    window.location = "../orbit.html";
+    window.location = "../orbitSite/orbit.html";
 }
 
 function help(output) {
