@@ -44,8 +44,8 @@ GitHub page.</div>
         <br>
 
         <div>GitHub Issue Browser</div>
-        <div>Created a Flask implementation of a simple GitHub issue browser. The app is
-currently deployed on an AWS EC2 instance running Gunicorn and NGINX.</div>
+        <div>Created a Flask implementation of a simple GitHub issue browser. The app shows
+current issues on a main page, and includes detail pages for each issue.</div>
         <br>
         <br>
 
