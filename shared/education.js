@@ -22,7 +22,7 @@ Algebraic Topology)</li>
         <br>
 
         <div>M.A. Mathematics</div>
-        <div>University of Montana--Missoula, Montana--Fall 2014-Spring 2017</div>
+        <div>University of Montana--Missoula, Montana--Fall 2014 - Spring 2017</div>
                 <div>Topics studied:</div>
                 <ul>
                     <li>Abstract Algebra (Groups, Rings Fields on a more basic level than at the
@@ -36,7 +36,7 @@ University of Oregon)</li>
         <br>
 
         <div>B.A. Mathematics</div>
-        <div>University of California--Santa Cruz, California--Fall 2007-Winter 2011</div>
+        <div>University of California--Santa Cruz, California--Fall 2007 - Winter 2011</div>
                 <div>Topics studied:</div>
                 <ul>
                     <li>Mathematics courses (Calculus, Vector Calculus, Linear Algebra (2 terms),
